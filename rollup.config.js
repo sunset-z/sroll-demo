@@ -17,9 +17,9 @@ export default {
     lodash: '_',
   },
   output: [
-    { file: pkg.main, format: 'cjs' },
-    { file: pkg.module, format: 'es' },
-    { file: pkg.browser, format: 'umd', name: 'myBundle' },
+    { file: `dist/${pkg.main}`, format: 'cjs' },
+    { file: `dist/${pkg.module}`, format: 'es' },
+    { file: `dist/${pkg.browser}`, format: 'umd', name: 'myBundle' },
   ],
   plugins: [
     resolve(),
