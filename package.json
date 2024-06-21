@@ -3,9 +3,9 @@
   "version": "1.1.2",
   "description": "",
   "private": false,
-  "main": "cjs.index.js",
-  "module": "es.index.js",
-  "browser": "umd.index.js",
+  "main": "main.cjs",
+  "module": "main.esm.js",
+  "browser": "main.browser.js",
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
