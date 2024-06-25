@@ -30,7 +30,6 @@ async function copyDirectory(src, dest) {
 
 // 主函数
 async function main() {
-
   // 确保输出目录存在
   await mkdir(outputDir, { recursive: true });
 
@@ -69,19 +68,19 @@ async function main() {
 
   console.log(`------------ Tarball moved to ${outputDir} ------------`);
 
-  if (isDev) {
-    console.log('当前环境为开发环境，不执行发布操作');
-    return;
-  }
+  // if (isDev) {
+  //   console.log('当前环境为开发环境，不执行发布操作');
+  //   return;
+  // }
 
   // 继续发布
-  try {
-    execSync(`npm publish ${tgzFilePath}`, { stdio: 'inherit' });
-    console.log('------------ Package published successfully ------------');
-  } catch (error) {
-    console.error('------------ Failed to publish package:', error.message, '------------');
-    process.exit(1);
-  }
+  // try {
+  //   execSync(`npm publish ${tgzFilePath}`, { stdio: 'inherit' });
+  //   console.log('------------ Package published successfully ------------');
+  // } catch (error) {
+  //   console.error('------------ Failed to publish package:', error.message, '------------');
+  //   process.exit(1);
+  // }
 }
 
 main().catch(console.error);

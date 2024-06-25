@@ -25,10 +25,16 @@ jobs:
       - name: Add node_modules/.bin to PATH
         run: echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
 
-      - name: Build package 🔧
-        run: yarn build:npm
+      # - name: Build package 🔧
+      #   run: yarn build:npm
 
-      - name: Publish to npm 🚀
-        run: yarn pack-publish
+      # - name: Publish to npm 🚀
+      #   run: yarn pack-publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Run semantic-release 🚀
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
