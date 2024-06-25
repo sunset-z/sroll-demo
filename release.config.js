@@ -1,5 +1,6 @@
 export default {
   branches: ['master'],
+  repositoryUrl: 'https://github.com/sunset-z/sroll-demo.git',
   plugins: [
     [
       '@semantic-release/commit-analyzer',
