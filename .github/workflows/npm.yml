@@ -25,6 +25,9 @@ jobs:
       - name: Add node_modules/.bin to PATH
         run: echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
 
+      - name: test
+        run: git -v
+
       # - name: Build package 🔧
       #   run: yarn build:npm
 
