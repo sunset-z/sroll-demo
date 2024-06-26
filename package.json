@@ -16,7 +16,7 @@
     "pack:local": "node scripts/release.cjs",
     "pack-publish": "cross-env NODE_ENV=production node scripts/release.cjs",
     "pack:release": "yarn build:npm && node scripts/release.cjs",
-    "release": "yarn build:npm && yarn pack-publish"
+    "release": "npm run build:npm && npm run pack-publish"
   },
   "keywords": [],
   "author": "",
