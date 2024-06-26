@@ -21,19 +21,11 @@ export default {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    // [
-    //   '@semantic-release/npm',
-    //   {
-    //     tarballDir: 'release',
-    //     npmPublish: false, // 禁用 npm 发布
-    //   },
-    // ],
-    '@semantic-release/github',
     [
-      '@semantic-release/git',
+      '@semantic-release/npm',
       {
-        assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'],
-        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        // 更改 package.json 的 version
+        npmPublish: false, // 禁用 npm 发布
       },
     ],
     [
@@ -41,7 +33,15 @@ export default {
       {
         verifyReleaseCmd: 'echo "Verifying release version ${nextRelease.version}"',
         prepareCmd: 'yarn pack:release', // 自定义打包脚本
-        publishCmd: 'npm run publish',
+        publishCmd: 'npm publish',
+      },
+    ],
+    '@semantic-release/github',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'],
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
   ],
