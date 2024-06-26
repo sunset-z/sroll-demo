@@ -25,16 +25,15 @@ export default {
       '@semantic-release/npm',
       {
         tarballDir: 'release',
-        prepare: 'node scripts/release.cjs',
       },
     ],
-    // '@semantic-release/github',
+    '@semantic-release/github',
     '@semantic-release/git',
     [
       '@semantic-release/exec',
       {
         verifyReleaseCmd: 'echo "Verifying release version ${nextRelease.version}"',
-        prepareCmd: 'npm run build:npm', // 自定义打包脚本
+        prepareCmd: 'yarn release', // 自定义打包脚本
       },
     ],
   ],

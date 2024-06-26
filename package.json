@@ -14,7 +14,8 @@
     "build:ts": "node scripts/build-ts.js",
     "build:npm": "yarn build && yarn build:ts",
     "pack:local": "node scripts/release.cjs",
-    "pack-publish": "cross-env NODE_ENV=production node scripts/release.cjs"
+    "pack-publish": "cross-env NODE_ENV=production node scripts/release.cjs",
+    "release": "yarn build:npm && node scripts/release.cjs"
   },
   "keywords": [],
   "author": "",
