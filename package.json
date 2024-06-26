@@ -8,9 +8,6 @@
   "browser": "main.browser.js",
   "types": "typings/main.d.ts",
   "type": "module",
-  "repository": {
-    "url": "git@github.com:sunset-z/sroll-demo.git"
-  },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
