@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/sunset-z/sroll-demo/compare/v1.2.6...v1.2.7) (2024-06-26)
+
+
+### Bug Fixes
+
+* publish cmd ([ed7f240](https://github.com/sunset-z/sroll-demo/commit/ed7f24059258e7c9a5b1ed7f5398d352d861ca43))
+
 ## [1.2.6](https://github.com/sunset-z/sroll-demo/compare/v1.2.5...v1.2.6) (2024-06-26)
 
 
