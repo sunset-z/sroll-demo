@@ -25,6 +25,7 @@ export default {
       '@semantic-release/npm',
       {
         tarballDir: 'release',
+        npmPublish: false, // 禁用 npm 发布
       },
     ],
     '@semantic-release/github',
