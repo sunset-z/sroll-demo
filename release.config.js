@@ -15,6 +15,7 @@ export default {
           { type: 'refactor', release: 'patch' },
           { type: 'chore', release: 'patch' },
           { type: 'test', release: 'patch' },
+          { type: 'del', release: 'patch' },
           { scope: 'no-release', release: false },
         ],
       },
