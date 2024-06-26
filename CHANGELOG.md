@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/sunset-z/sroll-demo/compare/v1.2.0...v1.2.1) (2024-06-26)
+
+
+### Bug Fixes
+
+* npm token ([7279e56](https://github.com/sunset-z/sroll-demo/commit/7279e56c04781ba7b7597b7e1e545fab59ebd31f))
+* registry url ([0500aab](https://github.com/sunset-z/sroll-demo/commit/0500aab6b72e4a4636fd3ae302834da6e215a78e))
+
 # [1.2.0](https://github.com/sunset-z/sroll-demo/compare/v1.1.4...v1.2.0) (2024-06-26)
 
 
