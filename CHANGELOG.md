@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/sunset-z/sroll-demo/compare/v1.2.2...v1.2.3) (2024-06-26)
+
+
+### Bug Fixes
+
+* forbidden npm publish ([6246475](https://github.com/sunset-z/sroll-demo/commit/62464755db0c9592060916704e7006d03aa047cf))
+
 ## [1.2.2](https://github.com/sunset-z/sroll-demo/compare/v1.2.1...v1.2.2) (2024-06-26)
 
 
