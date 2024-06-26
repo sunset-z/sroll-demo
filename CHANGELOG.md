@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/sunset-z/sroll-demo/compare/v1.2.1...v1.2.2) (2024-06-26)
+
+
+### Bug Fixes
+
+* npm prepare ([39412d8](https://github.com/sunset-z/sroll-demo/commit/39412d865d069723e613756d7114108e37d98d16))
+* prev ([0b36877](https://github.com/sunset-z/sroll-demo/commit/0b36877506e7982de05ba7f540d6739a58ed1bb6))
+
 ## [1.2.1](https://github.com/sunset-z/sroll-demo/compare/v1.2.0...v1.2.1) (2024-06-26)
 
 
