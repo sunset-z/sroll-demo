@@ -21,20 +21,26 @@ export default {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
+    // [
+    //   '@semantic-release/npm',
+    //   {
+    //     tarballDir: 'release',
+    //     npmPublish: false, // 禁用 npm 发布
+    //   },
+    // ],
+    '@semantic-release/github',
     [
-      '@semantic-release/npm',
+      '@semantic-release/git',
       {
-        tarballDir: 'release',
-        npmPublish: false, // 禁用 npm 发布
+        assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'],
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
-    '@semantic-release/github',
-    '@semantic-release/git',
     [
       '@semantic-release/exec',
       {
         verifyReleaseCmd: 'echo "Verifying release version ${nextRelease.version}"',
-        prepareCmd: 'yarn release', // 自定义打包脚本
+        prepareCmd: 'yarn pack', // 自定义打包脚本
       },
     ],
   ],
