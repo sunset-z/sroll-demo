@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 // 指定的源目录和目标目录
 const sourceDir = path.resolve(__dirname, '..', 'dist');
 const tempDir = path.resolve(__dirname, '..', 'temp');
-// const outputDir = path.resolve(__dirname, '..', 'release');
+const outputDir = path.resolve(__dirname);
 
 // 递归复制目录及其内容
 async function copyDirectory(src, dest) {
@@ -31,7 +31,7 @@ async function copyDirectory(src, dest) {
 // 主函数
 async function main() {
   // 确保输出目录存在
-  // await mkdir(outputDir, { recursive: true });
+  await mkdir(outputDir, { recursive: true });
 
   // 删除临时目录
   if (fs.existsSync(tempDir)) await rm(tempDir, { recursive: true, force: true });
@@ -56,18 +56,17 @@ async function main() {
   execSync('npm pack', { cwd: tempDir, stdio: 'inherit' });
 
   // 查找生成的 tarball 文件
-  // const tarballName = `${packageJson.name.replace('@', '').replace(/\//, '-')}-${packageJson.version}.tgz`;
+  const tarballName = `${packageJson.name.replace('@', '').replace(/\//, '-')}-${packageJson.version}.tgz`;
 
   // 移动 tarball 文件到自定义输出目录
-  // const tempFilePath = path.join(tempDir, tarballName);
-  // const tgzFilePath = path.join(outputDir, tarballName);
-  // fs.renameSync(tempFilePath, tgzFilePath);
+  const tempFilePath = path.join(tempDir, tarballName);
+  const tgzFilePath = path.join(outputDir, tarballName);
+  fs.renameSync(tempFilePath, tgzFilePath);
 
   // 删除临时目录
   await rm(tempDir, { recursive: true, force: true });
 
-  console.log(`------------ Tarball ------------`);
-  // console.log(`------------ Tarball moved to ${outputDir} ------------`);
+  console.log(`------------ Tarball moved to ${outputDir} ------------`);
 
   // if (isDev) {
   //   console.log('当前环境为开发环境，不执行发布操作');
