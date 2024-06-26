@@ -41,6 +41,7 @@ export default {
       {
         verifyReleaseCmd: 'echo "Verifying release version ${nextRelease.version}"',
         prepareCmd: 'yarn pack:release', // 自定义打包脚本
+        pulishCmd: 'yarn publish',
       },
     ],
   ],

@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 // 指定的源目录和目标目录
 const sourceDir = path.resolve(__dirname, '..', 'dist');
 const tempDir = path.resolve(__dirname, '..', 'temp');
-const outputDir = path.resolve(__dirname);
+const outputDir = path.resolve(__dirname, '..');
 
 // 递归复制目录及其内容
 async function copyDirectory(src, dest) {
