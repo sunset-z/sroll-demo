@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/sunset-z/sroll-demo/compare/v1.2.4...v1.2.5) (2024-06-26)
+
+
+### Bug Fixes
+
+* hide semantic npm ([b884ae1](https://github.com/sunset-z/sroll-demo/commit/b884ae13f3bdb365bdd994d3ffb88e7527e6158a))
+
 ## [1.2.4](https://github.com/sunset-z/sroll-demo/compare/v1.2.3...v1.2.4) (2024-06-26)
 
 ## [1.2.3](https://github.com/sunset-z/sroll-demo/compare/v1.2.2...v1.2.3) (2024-06-26)
