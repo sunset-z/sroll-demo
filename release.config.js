@@ -32,15 +32,16 @@ export default {
       '@semantic-release/exec',
       {
         verifyReleaseCmd: 'echo "Verifying release version ${nextRelease.version}"',
-        prepareCmd: 'yarn pack:release', // 自定义打包脚本
-        publishCmd: 'npm publish',
+        // prepareCmd: 'yarn pack:release', // 自定义打包脚本
+        // publishCmd: 'npm publish', // 未指定具体 tgz 文件，将会再执行 npm pack
+        publishCmd: 'yarn release', // 打包、发布一体
       },
     ],
     '@semantic-release/github',
     [
       '@semantic-release/git',
       {
-        assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'],
+        // assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
