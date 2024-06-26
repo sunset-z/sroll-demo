@@ -21,8 +21,14 @@ export default {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    ['@semantic-release/npm', { tarballDir: 'release' }],
-    '@semantic-release/github',
+    [
+      '@semantic-release/npm',
+      {
+        tarballDir: 'release',
+        prepare: 'node scripts/release.cjs',
+      },
+    ],
+    // '@semantic-release/github',
     '@semantic-release/git',
     [
       '@semantic-release/exec',
