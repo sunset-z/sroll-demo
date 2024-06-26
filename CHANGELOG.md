@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/sunset-z/sroll-demo/compare/v1.2.10...v1.2.11) (2024-06-26)
+
+
+### Bug Fixes
+
+* optimize exec cmd ([5e9246e](https://github.com/sunset-z/sroll-demo/commit/5e9246eb52a58b212b830c8b75883369ef50faec))
+
 ## [1.2.10](https://github.com/sunset-z/sroll-demo/compare/v1.2.9...v1.2.10) (2024-06-26)
 
 
