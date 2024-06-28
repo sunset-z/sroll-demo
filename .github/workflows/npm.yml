@@ -38,7 +38,7 @@ jobs:
       - name: Generate new version and changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release --no-ci --no-tag
+        run: npx semantic-release --no-ci --dry-run
 
       - name: Build project
         run: npm run build

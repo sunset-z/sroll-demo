@@ -45,6 +45,7 @@ export default {
       {
         // assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        prepare: 'echo "${nextRelease.version} not push"',
       },
     ],
   ],
