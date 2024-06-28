@@ -64,6 +64,7 @@ export default {
         `,
       },
     ],
+    '@semantic-release/git',
     // [
     //   '@semantic-release/git',
     //   {
