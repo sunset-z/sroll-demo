@@ -59,7 +59,7 @@ export default {
           git config --global user.email "semantic-release-bot@martynus.net"
           git checkout -b npm
           git add -f dist/ package.json CHANGELOG.md .gitignore
-          git commit -m "chore(release): \${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+          git commit -m "chore(release): \${nextRelease.version} [skip ci]\n\n\${nextRelease.notes}"
           git push --force origin npm
         `,
       },
