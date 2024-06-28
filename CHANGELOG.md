@@ -1,3 +1,5 @@
+## [1.2.19](https://github.com/sunset-z/sroll-demo/compare/v1.2.18...v1.2.19) (2024-06-28)
+
 ## [1.2.18](https://github.com/sunset-z/sroll-demo/compare/v1.2.17...v1.2.18) (2024-06-28)
 
 ## [1.2.17](https://github.com/sunset-z/sroll-demo/compare/v1.2.16...v1.2.17) (2024-06-28)
