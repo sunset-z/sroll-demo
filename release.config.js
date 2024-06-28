@@ -22,13 +22,13 @@ export default {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    [
-      '@semantic-release/npm',
-      {
-        // 更改 package.json 的 version
-        npmPublish: false, // 禁用 npm 发布
-      },
-    ],
+    // [
+    //   '@semantic-release/npm',
+    //   {
+    //     // 更改 package.json 的 version
+    //     npmPublish: false, // 禁用 npm 发布
+    //   },
+    // ],
     [
       '@semantic-release/exec',
       {
