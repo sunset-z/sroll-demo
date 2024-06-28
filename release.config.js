@@ -20,13 +20,15 @@ export default {
         ],
       },
     ],
-    // [
-    //   '@semantic-release/npm',
-    //   {
-    //     // 更改 package.json 的 version
-    //     npmPublish: false, // 禁用 npm 发布
-    //   },
-    // ],
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
+    [
+      '@semantic-release/npm',
+      {
+        // 更改 package.json 的 version
+        npmPublish: false, // 禁用 npm 发布
+      },
+    ],
     [
       '@semantic-release/exec',
       {
@@ -37,15 +39,28 @@ export default {
         publishCmd: 'npm run release', // 打包、发布一体
       },
     ],
-    '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
     [
       '@semantic-release/git',
       {
-        // assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包
+        assets: ['dist/**/*'], // 这里会跟根目录一同打包
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
     '@semantic-release/github',
   ],
+  verifyConditions: ['@semantic-release/changelog', '@semantic-release/git', '@semantic-release/github'],
+  prepare: [
+    '@semantic-release/changelog',
+    '@semantic-release/npm',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'CHANGELOG.md'],
+        message: 'chore(release): ${nextRelease.version} \n\n${nextRelease.notes}',
+      },
+    ],
+  ],
+  publish: ['@semantic-release/npm', '@semantic-release/github'],
+  success: ['@semantic-release/github'],
+  fail: ['@semantic-release/github'],
 };
