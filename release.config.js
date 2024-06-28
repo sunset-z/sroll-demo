@@ -54,26 +54,25 @@ export default {
         // publishCmd: 'npm publish', // 未指定具体 tgz 文件，将会再执行 npm pack
         prepareCmd: 'npm run build:npm', // 下载依赖
         publishCmd: 'npm run release', // 打包、发布一体
-        // successCmd: `
-        //   git config --global user.name "semantic-release-bot"
-        //   git config --global user.email "semantic-release-bot@martynus.net"
-        //   git remote set-url origin https://\${GITHUB_TOKEN}@github.com/\${GITHUB_REPOSITORY}.git
-        //   git checkout -b npm
-        //   git add -f dist/ package.json CHANGELOG.md .gitignore
-        //   git commit -m "chore(release): \${nextRelease.version} [skip ci]\n\n\${nextRelease.notes}"
-        //   git push --force origin npm
-        // `,
+        successCmd: `
+          git config --global user.name "semantic-release-bot"
+          git config --global user.email "semantic-release-bot@martynus.net"
+          git remote set-url origin https://\${GITHUB_TOKEN}@github.com/\${GITHUB_REPOSITORY}.git
+          git checkout -b npm
+          git add -f dist/ package.json CHANGELOG.md .gitignore
+          git commit -m "chore(release): \${nextRelease.version} [skip ci]\n\n\${nextRelease.notes}"
+          git push --force origin npm
+        `,
       },
     ],
-    // '@semantic-release/git',
-    [
-      '@semantic-release/git',
-      {
-        assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包 ????
-        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
-        branch: { name: 'npm' },
-      },
-    ],
+    // '@semantic-release/git',  // 固定是哪个分支打包推哪个 (×)
+    // [
+    //   '@semantic-release/git',
+    //   {
+    //     assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包 ????
+    //     message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+    //   },
+    // ],
     '@semantic-release/github',
   ],
 };
