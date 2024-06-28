@@ -64,14 +64,15 @@ export default {
         `,
       },
     ],
-    '@semantic-release/git',
-    // [
-    //   '@semantic-release/git',
-    //   {
-    //     assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包 ????
-    //     message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
-    //   },
-    // ],
+    // '@semantic-release/git',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'], // 这里会跟根目录一同打包 ????
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        branch: 'npm',
+      },
+    ],
     '@semantic-release/github',
   ],
 };
