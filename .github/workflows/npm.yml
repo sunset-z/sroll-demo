@@ -43,6 +43,12 @@ jobs:
       #     echo "Next version: $NEXT_VERSION"
       #     jq ".version=\"$NEXT_VERSION\"" package.json > package.json.tmp && mv package.json.tmp package.json
 
+      - name: Configure Git 🔧
+        run: |
+          git config --global user.name "semantic-release-bot"
+          git config --global user.email "semantic-release-bot@martynus.net"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
       - name: Run semantic-release 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
