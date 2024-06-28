@@ -1,5 +1,5 @@
 export default {
-  branches: ['master'],
+  branches: ['npm'],
   repositoryUrl: 'https://github.com/sunset-z/sroll-demo.git',
   plugins: [
     [
