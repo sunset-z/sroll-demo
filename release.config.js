@@ -55,6 +55,9 @@ export default {
         prepareCmd: 'npm run build:npm', // 下载依赖
         publishCmd: 'npm run release', // 打包、发布一体
         successCmd: `
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
           git checkout -b npm
           git add -f dist/ package.json CHANGELOG.md .gitignore
           git commit -m "chore(release): \${nextRelease.version} [skip ci]\n\n\${nextRelease.notes}"
