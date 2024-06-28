@@ -35,6 +35,22 @@ jobs:
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Generate new version and changelog
+        run: npx semantic-release --no-ci --no-tag
+
+      - name: Build project
+        run: npm run build
+
+      - name: Create and push tag
+        if: success()
+        run: |
+          TAG=v$(npx semantic-release --no-ci --dry-run | grep -oP '(?<=\[semantic-release\] Created tag )v[0-9]+\.[0-9]+\.[0-9]+')
+          git tag $TAG
+          git push origin $TAG
+
+      # - name: Publish to npm
+      #   run: npx semantic-release
+
       - name: Run semantic-release 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
