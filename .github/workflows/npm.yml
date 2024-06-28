@@ -35,17 +35,6 @@ jobs:
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Generate next version and update package.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          NEXT_VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+')
-          echo "Next version: $NEXT_VERSION"
-          jq ".version=\"$NEXT_VERSION\"" package.json > package.json.tmp && mv package.json.tmp package.json
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git commit -am "chore(release): update version to $NEXT_VERSION"
-
       - name: Run semantic-release 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
