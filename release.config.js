@@ -13,7 +13,7 @@ export default {
           { type: 'docs', release: 'patch' },
           { type: 'style', release: 'patch' },
           { type: 'refactor', release: 'patch' },
-          { type: 'chore', release: 'patch' },
+          // { type: 'chore', release: 'patch' },
           { type: 'test', release: 'patch' },
           { type: 'del', release: 'patch' },
           { scope: 'no-release', release: false },
